@@ -1,19 +1,666 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>불사조 기록단 — 선전 & 상하이 공간 연출 UX 비교 분석</title>
-    <meta name="description" content="한성대학교 글로벌 리더십 탐방단 4조. 선전(기술)과 상하이(역사·문화)의 공간 연출 및 사용자 경험을 6인의 다학제 시각으로 비교 분석한다." />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>불사조 기록단 — 선전 & 상하이 탐방 기록</title>
+  <meta name="description" content="한성대학교 4조 불사조 기록단. 선전(기술)과 상하이(역사·문화)의 공간 연출 및 사용자 경험 비교 분석." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Nav ─────────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <a href="#hero" class="nav__logo">
+    <span>🔥</span><span>불사조 기록단</span>
+  </a>
+  <button class="nav__hamburger" id="hamburger" aria-label="메뉴">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav__links" id="navLinks">
+    <li><a href="#about">소개</a></li>
+    <li><a href="#compare">비교</a></li>
+    <li><a href="#itinerary">일정</a></li>
+    <li><a href="#places">공간 기록</a></li>
+    <li><a href="#reels">콘텐츠</a></li>
+    <li><a href="#team">팀</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ────────────────────────────────────────── -->
+<section id="hero" class="hero">
+  <div class="hero__dots"></div>
+  <div class="hero__content">
+    <p class="hero__eyebrow">한성대학교 글로벌 리더십 탐방단 2026 · 4조</p>
+
+    <div class="hero__rule"></div>
+
+    <h1 class="hero__title">
+      <span>선전과 상하이의</span>
+      <span>공간 연출 및</span>
+      <span>사용자 경험 비교</span>
+    </h1>
+
+    <div class="hero__rule"></div>
+
+    <p class="hero__subtitle">첨단 기술과 문화 융합 기반 글로벌 공간 트렌드 분석</p>
+
+    <div class="hero__keywords">
+      <span>실증</span>
+      <span class="dot">·</span>
+      <span>융합</span>
+      <span class="dot">·</span>
+      <span>기록</span>
+    </div>
+
+    <div class="hero__cities">
+      <div class="hero__city hero__city--sz">
+        <span class="hero__city-icon">⚡</span>
+        <strong>선전</strong>
+        <small>첨단 기술 · 미래 도시</small>
+      </div>
+      <div class="hero__city-divider">vs</div>
+      <div class="hero__city hero__city--sh">
+        <span class="hero__city-icon">🏯</span>
+        <strong>상하이</strong>
+        <small>역사 문화 · 공간 재생</small>
+      </div>
+    </div>
+
+    <p class="hero__meta">📅 2026.07.06 – 07.10 &nbsp;·&nbsp; 4박 5일 &nbsp;·&nbsp; 🔥 불사조 기록단</p>
+
+    <a href="#about" class="hero__scroll">
+      아래로 스크롤
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ── About ────────────────────────────────────────── -->
+<section id="about" class="section about">
+  <div class="container">
+    <p class="section-label">프로젝트 소개</p>
+    <h2 class="section-title">왜 두 도시인가</h2>
+    <p class="about__lead">
+      중국을 대표하는 두 도시, 선전과 상하이. 하나는 AI·드론·자율주행이 일상화된 첨단 기술 도시이고, 다른 하나는 유럽풍 건축과 역사 문화가 공존하는 인문학적 공간이다. 불사조 기록단은 두 도시가 방문객에게 제공하는 시각적 공간 연출과 사용자 경험(UX)을 6인의 다학제 시각으로 비교 분석하고, 그 과정을 기록형 콘텐츠로 아카이빙한다.
+    </p>
+    <div class="about__cards reveal">
+      <div class="about__card">
+        <span class="about__card-num">01</span>
+        <h3>실증</h3>
+        <p>전공 서적과 강의에서 이론으로만 학습해 온 지식들을 글로벌 현장 탐방이라는 실제적 경험을 통해 검증한다.</p>
+      </div>
+      <div class="about__card">
+        <span class="about__card-num">02</span>
+        <h3>융합</h3>
+        <p>인문학적 스토리텔링과 경영 전략, 공간 설계 및 최첨단 공학 시스템을 아우르는 다각도의 시선을 하나로 모은다.</p>
+      </div>
+      <div class="about__card">
+        <span class="about__card-num">03</span>
+        <h3>기록</h3>
+        <p>공간은 그곳에 머무는 사람들의 이야기와 시간이 쌓여서 만들어진다. 우리만의 특별한 시선이 담긴 기록물로 남긴다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Compare ──────────────────────────────────────── -->
+<section id="compare" class="section compare">
+  <div class="container">
+    <p class="section-label">비교 분석</p>
+    <h2 class="section-title">두 도시, 두 공간의 언어</h2>
+    <p class="compare__lead">선전은 기술로 공간을 설계하고, 상하이는 역사로 공간에 이야기를 입힌다.</p>
+  </div>
+  <div class="compare__split reveal">
+    <div class="compare__col compare__col--sz">
+      <div class="compare__col-inner">
+        <div class="compare__col-header">
+          <span class="compare__icon">⚡</span>
+          <div>
+            <h3>선전 Shenzhen</h3>
+            <p>기술이 공간을 재정의하다</p>
+          </div>
+        </div>
+        <ul class="compare__list">
+          <li><span>🤖</span><div><strong>자율주행 · AI</strong><span>바이두 Apollo Go — 운전자 없는 로보택시가 일상화</span></div></li>
+          <li><span>🚁</span><div><strong>드론 배달</strong><span>메이탄 드론 배달 15분 — 하늘길이 물류 인프라</span></div></li>
+          <li><span>🏢</span><div><strong>테크 플래그십</strong><span>DJI · BYD — 기업이 브랜드 공간으로 사용자를 설계</span></div></li>
+          <li><span>🔬</span><div><strong>하드웨어 생태계</strong><span>대공방 — 아이디어가 제품이 되는 창업 공간</span></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="compare__col compare__col--sh">
+      <div class="compare__col-inner">
+        <div class="compare__col-header">
+          <span class="compare__icon">🏯</span>
+          <div>
+            <h3>상하이 Shanghai</h3>
+            <p>역사가 공간을 이야기하다</p>
+          </div>
+        </div>
+        <ul class="compare__list">
+          <li><span>🏛️</span><div><strong>역사 재생</strong><span>임시정부 청사 · 홍구공원 — 서사가 담긴 공간의 힘</span></div></li>
+          <li><span>🌿</span><div><strong>전통 정원</strong><span>예원 — 명나라 정원이 현대 관광과 공존</span></div></li>
+          <li><span>🏙️</span><div><strong>문화 재생지구</strong><span>신천지 — 스쿠먼 건축을 트렌디한 상업 공간으로</span></div></li>
+          <li><span>🌉</span><div><strong>야경 경관</strong><span>외탄 · 동방명주 — 도시 스카이라인이 만드는 공간 서사</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Itinerary ─────────────────────────────────────── -->
+<section id="itinerary" class="section itinerary">
+  <div class="container">
+    <p class="section-label">탐방 일정</p>
+    <h2 class="section-title">4박 5일의 기록</h2>
+    <p class="itinerary__sub">2026년 7월 6일 – 7월 10일 · 중국 선전 &amp; 상하이</p>
+
+    <div class="timeline reveal">
+
+      <div class="timeline__item">
+        <div class="timeline__marker">
+          <span class="timeline__day">Day 1</span>
+          <span class="timeline__date">07.06 (월)</span>
+          <span class="badge badge--sz">선전</span>
+        </div>
+        <div class="timeline__content">
+          <h3>선전 도착 — 미래 기술의 첫인상</h3>
+          <ul>
+            <li><time>10:05</time><span>인천국제공항(T2) 출발 (OZ371)</span></li>
+            <li><time>12:40</time><span>선전국제공항 도착 · 입국 수속</span></li>
+            <li><time>14:00</time><span>바이두 아폴로 고 — 쇼룸 브리핑 &amp; 자율주행 시승 (90분)</span></li>
+            <li><time>저녁</time><span>메이탄 드론 배달 시연 체험</span></li>
+            <li><time>야간</time><span>호텔 체크인 · 오리엔테이션</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__marker">
+          <span class="timeline__day">Day 2</span>
+          <span class="timeline__date">07.07 (화)</span>
+          <span class="badge badge--sz">선전</span>
+        </div>
+        <div class="timeline__content">
+          <h3>선전 풀데이 — 기술 기업 집중 탐방</h3>
+          <ul>
+            <li><time>오전</time><span>BYD 본사 — 쇼룸 &amp; 시연 (60분)</span></li>
+            <li><time>오후</time><span>DJI 플래그십 스토어 — 체험형 공간 탐방 (60분)</span></li>
+            <li><time>오후</time><span>대공방(iMakerbase) — 하드웨어 액셀러레이터 방문</span></li>
+            <li><time>야간</time><span>조별 과제 토의 (호텔 미팅룸, 약 3시간)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__marker">
+          <span class="timeline__day">Day 3</span>
+          <span class="timeline__date">07.08 (수)</span>
+          <span class="badge badge--tr">이동</span>
+        </div>
+        <div class="timeline__content">
+          <h3>선전 → 상하이 — 기술에서 역사로</h3>
+          <ul>
+            <li><time>09:30</time><span>선전공항 출발 (MU 5338)</span></li>
+            <li><time>11:30</time><span>상하이 홍교 공항 도착</span></li>
+            <li><time>14:00</time><span>만국공묘 방문 — 독립운동 역사 현장</span></li>
+            <li><time>14:40</time><span>남경로 탐방 — 상하이 최대 번화가</span></li>
+            <li><time>21:00</time><span>황포강 유람선 탑승 + 외탄 야경 감상</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__marker">
+          <span class="timeline__day">Day 4</span>
+          <span class="timeline__date">07.09 (목)</span>
+          <span class="badge badge--sh">상하이</span>
+        </div>
+        <div class="timeline__content">
+          <h3>상하이 — 역사 재생 공간과 조별 발표</h3>
+          <ul>
+            <li><time>오전</time><span>윤봉길 의사 홍구공원 · 대한민국 임시정부 청사</span></li>
+            <li><time>오후</time><span>예원 &amp; 상해 옛거리 · 신천지 탐방</span></li>
+            <li><time>저녁</time><span>콘래드 상하이 만찬 (뷔페식)</span></li>
+            <li><time>야간</time><span>조별 과제 토의 &amp; 수행 내용 발표</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__marker">
+          <span class="timeline__day">Day 5</span>
+          <span class="timeline__date">07.10 (금)</span>
+          <span class="badge badge--sh">상하이</span>
+        </div>
+        <div class="timeline__content">
+          <h3>상하이 마지막 날 — 랜드마크와 귀국</h3>
+          <ul>
+            <li><time>오전</time><span>동방명주타워 + 도시역사진열관 관광</span></li>
+            <li><time>14:00</time><span>상하이 푸동국제공항 도착 · 탑승 수속</span></li>
+            <li><time>16:20</time><span>상하이 출발 (OZ366)</span></li>
+            <li><time>19:20</time><span>인천국제공항(T2) 도착 · 해산</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Places ────────────────────────────────────────── -->
+<section id="places" class="section places">
+  <div class="container">
+    <p class="section-label">공간 기록</p>
+    <h2 class="section-title">탐방 공간 로그</h2>
+    <p class="places__sub">방문한 모든 공간의 UX와 공간 연출을 기록합니다. 평점·사진은 탐방(7월) 후 업데이트됩니다.</p>
+
+    <div class="places__filters">
+      <button class="filter active" data-filter="all">전체 <span>13</span></button>
+      <button class="filter" data-filter="shenzhen">선전 <span>5</span></button>
+      <button class="filter" data-filter="shanghai">상하이 <span>8</span></button>
+    </div>
+
+    <div class="places__grid" id="placesGrid">
+
+      <!-- 선전 -->
+      <article class="place-card" data-city="shenzhen">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>⚡</span></div>
+          <span class="place-tag place-tag--sz">선전</span>
+          <span class="cat-tag cat--tech">기술</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>바이두 아폴로 고 (Apollo Go)</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>완전 무인 Level 4 자율주행 로보택시. 쇼룸 브리핑과 실제 도심 시승 체험.</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>앱 호출부터 탑승·하차까지 운전자 없는 UX 흐름. 안내 화면·소음·내부 공간 경험 분석.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="place-card" data-city="shenzhen">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>🚁</span></div>
+          <span class="place-tag place-tag--sz">선전</span>
+          <span class="cat-tag cat--tech">기술</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>메이탄 드론 배달 시연</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>선전 국가인재공원. QR코드 결제 → 드론 배달 → 컨테이너형 포트 수령. 평균 배달 15분.</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>오더 → 픽업 오스크 선택 → 드론 도착 알림 → 패널 수령까지 단계별 UX 관찰.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="place-card" data-city="shenzhen">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>🚗</span></div>
+          <span class="place-tag place-tag--sz">선전</span>
+          <span class="cat-tag cat--tech">기술</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>BYD 본사</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>세계 최대 전기차 기업 선전 본사. 홍보관·R&amp;D 센터·로봇 자동화 생산 시설 견학.</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>브랜드 공간 연출과 방문객 동선 설계. 기술 기업의 오프라인 쇼룸 전략 분석.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="place-card" data-city="shenzhen">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>🎯</span></div>
+          <span class="place-tag place-tag--sz">선전</span>
+          <span class="cat-tag cat--tech">기술</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>DJI 플래그십 스토어 (OCT BAY)</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>선전 남산구 OCT BAY. 드론 전시·체험·비행 시범·항공촬영 영상. "드론계의 애플 스토어".</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>체험형 공간 연출의 정수. 제품 전시 배치·조명·동선·인터랙션 UX 심층 분석.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="place-card" data-city="shenzhen">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>🔬</span></div>
+          <span class="place-tag place-tag--sz">선전</span>
+          <span class="cat-tag cat--tech">기술</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>대공방 大公坊 (iMakerbase)</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>2013년 설립 국제 하드웨어 액셀러레이터. 스타트업 인큐베이션·투자 피칭·공급망 연결.</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>혁신 창업 공간의 배치와 협업 문화. 공간이 아이디어 생성에 미치는 영향 분석.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 상하이 -->
+      <article class="place-card" data-city="shanghai">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>🇰🇷</span></div>
+          <span class="place-tag place-tag--sh">상하이</span>
+          <span class="cat-tag cat--history">역사</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>상하이독립운동가요 (만국공묘)</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>타국에서 독립을 위해 헌신한 독립운동가들이 잠든 역사적 공간.</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>숭고한 서사가 배어있는 공간의 조경·동선·사인 시스템. 감정을 유도하는 공간 설계.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="place-card" data-city="shanghai">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>🌸</span></div>
+          <span class="place-tag place-tag--sh">상하이</span>
+          <span class="cat-tag cat--history">역사</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>윤봉길 의사 폭탄투척지 홍구공원</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>1932년 의거 현장. 기념관이 조성되어 의거의 배경과 의미를 체계적으로 학습.</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>역사 콘텐츠의 현장 해설 방식. 기념 공간의 시각 언어와 감동 전달 방법 분석.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="place-card" data-city="shanghai">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>🏛️</span></div>
+          <span class="place-tag place-tag--sh">상하이</span>
+          <span class="cat-tag cat--history">역사</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>대한민국 임시정부 청사</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>1919~1932년 활동한 임시정부 청사. 독립전략 수립·임시헌법 체계의 출발점.</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>역사 공간의 보존·전시 방식과 방문객 학습 경험 설계. 공간이 전하는 서사의 힘.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="place-card" data-city="shanghai">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>🛍️</span></div>
+          <span class="place-tag place-tag--sh">상하이</span>
+          <span class="cat-tag cat--culture">문화</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>남경로 (南京路)</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>상하이 최대 번화가. 현대식 건물과 서양식 건물의 조화. 낮과 밤 모두 화려.</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>보행자 중심 거리 연출. 브랜드 쇼핑·미식·야경이 어우러진 복합 UX 흐름.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="place-card" data-city="shanghai">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>🌿</span></div>
+          <span class="place-tag place-tag--sh">상하이</span>
+          <span class="cat-tag cat--history">역사</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>예원 &amp; 상해 옛거리</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>명나라 관료가 18년에 걸쳐 조성한 중국식 정원. 40개의 정자와 연못.</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>전통 정원 공간의 시선 유도·정자 배치·감성 동선. 역사와 현대 상업의 공존 연출.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="place-card" data-city="shanghai">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>☕</span></div>
+          <span class="place-tag place-tag--sh">상하이</span>
+          <span class="cat-tag cat--culture">문화</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>신천지 (新天地)</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>스쿠먼 가옥과 서양 건축이 공존하는 상하이 대표 관광·문화 지구.</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>역사 건축 재생 + 트렌디한 F&amp;B 유치. 문화 재생 공간의 브랜딩과 방문객 경험.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="place-card" data-city="shanghai">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>🌉</span></div>
+          <span class="place-tag place-tag--sh">상하이</span>
+          <span class="cat-tag cat--landscape">경관</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>황포강 유람선 + 외탄(外灘) 야경</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>황포강을 따라 동방명주·세계금융센터·진마오 타워 등 랜드마크를 감상.</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>야경 조명 연출과 관람객의 감성 경험. 도시 스카이라인이 만들어내는 공간 서사.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="place-card" data-city="shanghai">
+        <figure class="place-card__photo">
+          <div class="photo-placeholder"><span>🗼</span></div>
+          <span class="place-tag place-tag--sh">상하이</span>
+          <span class="cat-tag cat--culture">문화</span>
+        </figure>
+        <div class="place-card__body">
+          <h3>동방명주타워 + 도시역사진열관</h3>
+          <div class="rating"><span class="stars">☆☆☆☆☆</span><span class="rating-note">탐방 후 입력</span></div>
+          <p>468m 상하이 랜드마크. 전망대에서 황포강과 도시 전경 조망. 유리 전망바닥 체험.</p>
+          <div class="ux-point">
+            <span>UX 관전 포인트</span>
+            <p>수직 공간에서의 도시 체험. 역사진열관의 공간 큐레이션과 시대별 서사 연출.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Reels ─────────────────────────────────────────── -->
+<section id="reels" class="section reels">
+  <div class="container">
+    <p class="section-label">기록형 콘텐츠</p>
+    <h2 class="section-title">숏폼 시리즈</h2>
+    <p class="reels__sub">불사조 기록단의 시선으로 담은 선전과 상하이. 릴스 시리즈는 탐방 후 업로드됩니다.</p>
+    <div class="reels__grid reveal">
+
+      <div class="reel-card">
+        <div class="reel-card__screen">
+          <div class="reel-placeholder">
+            <span>🎬</span>
+            <span>Coming<br/>July 2026</span>
+          </div>
+        </div>
+        <div class="reel-card__info">
+          <h3>선전에서의 하루</h3>
+          <p>자율주행 택시 탑승부터 드론 배달 체험까지. 미래가 현실이 된 도시 선전의 24시간.</p>
+          <div class="reel-tags"><span>#선전</span><span>#기술</span><span>#미래도시</span></div>
+        </div>
+      </div>
+
+      <div class="reel-card">
+        <div class="reel-card__screen">
+          <div class="reel-placeholder">
+            <span>🎬</span>
+            <span>Coming<br/>July 2026</span>
+          </div>
+        </div>
+        <div class="reel-card__info">
+          <h3>상하이에서의 하루</h3>
+          <p>외탄의 유럽풍 야경, 예원의 명나라 정원, 신천지의 스쿠먼 골목. 역사와 현대가 공존하는 상하이.</p>
+          <div class="reel-tags"><span>#상하이</span><span>#문화</span><span>#역사</span></div>
+        </div>
+      </div>
+
+      <div class="reel-card">
+        <div class="reel-card__screen">
+          <div class="reel-placeholder">
+            <span>🎬</span>
+            <span>Coming<br/>July 2026</span>
+          </div>
+        </div>
+        <div class="reel-card__info">
+          <h3>분할 화면: 선전 vs 상하이</h3>
+          <p>화면을 반으로 나눠 두 도시의 대조적인 공간을 동시에 보여준다. 기술 대 역사, 미래 대 전통.</p>
+          <div class="reel-tags"><span>#비교</span><span>#선전</span><span>#상하이</span></div>
+        </div>
+      </div>
+
+      <div class="reel-card">
+        <div class="reel-card__screen">
+          <div class="reel-placeholder">
+            <span>🎬</span>
+            <span>Coming<br/>July 2026</span>
+          </div>
+        </div>
+        <div class="reel-card__info">
+          <h3>1초 컷 공간 모음</h3>
+          <p>방문한 모든 공간을 1~2초씩 짧게 담아 하나로 엮은 빠른 기록. 두 도시의 공간 밀도를 느껴라.</p>
+          <div class="reel-tags"><span>#숏폼</span><span>#선전</span><span>#상하이</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Team ──────────────────────────────────────────── -->
+<section id="team" class="section team">
+  <div class="container">
+    <p class="section-label">팀 소개</p>
+    <h2 class="section-title">불사조 기록단</h2>
+    <p class="team__sub">AI · VMD · 기업경영 · 문학문화콘텐츠 · 상상력인재 — 6개의 전공이 하나의 시선으로</p>
+
+    <div class="team__grid reveal">
+
+      <div class="member-card">
+        <div class="member-card__avatar">🧭</div>
+        <div class="member-card__info">
+          <div class="member-card__name-row">
+            <span class="member-name">엄태규</span>
+            <span class="leader-badge">팀장</span>
+          </div>
+          <span class="member-track">기업경영트랙 / 문학문화콘텐츠트랙</span>
+          <p>팀 총괄·기획, 공간 비즈니스 모델 분석, 릴스 시리즈 디렉팅</p>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-card__avatar">🎨</div>
+        <div class="member-card__info">
+          <div class="member-card__name-row">
+            <span class="member-name">지준희</span>
+          </div>
+          <span class="member-track">VMD전시디자인트랙</span>
+          <p>VMD 공간 연출 분석, 시각화 자료·인포그래픽 제작</p>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-card__avatar">💻</div>
+        <div class="member-card__info">
+          <div class="member-card__name-row">
+            <span class="member-name">이준구</span>
+          </div>
+          <span class="member-track">AI응용학부</span>
+          <p>AI·스마트 인프라 기술 분석, 팀 웹페이지 제작·운영</p>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-card__avatar">📖</div>
+        <div class="member-card__info">
+          <div class="member-card__name-row">
+            <span class="member-name">권서연</span>
+          </div>
+          <span class="member-track">문학문화콘텐츠학과</span>
+          <p>인문학적 스토리텔링, 공간 트렌드 조사, 보고서 서술 총괄</p>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-card__avatar">🎬</div>
+        <div class="member-card__info">
+          <div class="member-card__name-row">
+            <span class="member-name">이우혁</span>
+          </div>
+          <span class="member-track">문학문화콘텐츠학과</span>
+          <p>숏폼 콘텐츠 기획·구성, 도시별 문화 컨텍스트 분석</p>
+        </div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-card__avatar">✨</div>
+        <div class="member-card__info">
+          <div class="member-card__name-row">
+            <span class="member-name">이시윤</span>
+          </div>
+          <span class="member-track">상상력인재학부</span>
+          <p>창의 기획·미래 시나리오 도출, 최종 발표 구성·진행</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__brand">
+      <span class="footer__fire">🔥</span>
+      <span class="footer__name">불사조 기록단</span>
+    </div>
+    <p class="footer__project">선전과 상하이의 공간 연출 및 사용자 경험 비교 분석</p>
+    <p class="footer__uni">한성대학교 글로벌 리더십 탐방단 2026 · 4조</p>
+    <p class="footer__period">2026.07.06 – 07.10</p>
+    <div class="footer__keywords">
+      <span>#실증</span><span>#융합</span><span>#기록</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>
