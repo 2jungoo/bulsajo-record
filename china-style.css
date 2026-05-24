@@ -716,6 +716,41 @@ figure { margin: 0; }
   background: rgba(200,150,12,.12); border-radius: 2px; padding: 3px 10px;
 }
 
+/* ─── Drone Delivery ────────────────────────────────── */
+.drone__desc {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+
+.drone__frame {
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: #F5EDD8;
+  /* 金线 inner highlight */
+  outline: 1px solid rgba(200,150,12,.15);
+  outline-offset: 4px;
+}
+
+.drone__frame iframe {
+  display: block;
+  width: 100%;
+  height: 880px;
+  border: none;
+}
+
+@media (max-width: 900px) {
+  .drone__frame iframe { height: 1100px; }
+}
+
+@media (max-width: 640px) {
+  .drone__frame iframe { height: 1300px; }
+}
+
 /* ─── Team ───────────────────────────────────────────── */
 .team { background: var(--bg-alt); }
 
