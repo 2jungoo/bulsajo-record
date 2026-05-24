@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>불사조 기록단 — 선전 & 상하이 탐방 기록</title>
+  <title>불사조 기록단 — 선전 &amp; 상하이 탐방 기록 · 凤凰版</title>
   <meta name="description" content="한성대학교 4조 불사조 기록단. 선전(기술)과 상하이(역사·문화)의 공간 연출 및 사용자 경험 비교 분석." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&display=swap" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="china-style.css" />
 </head>
 <body>
 
 <!-- ── Progress bar ────────────────────────────────── -->
 <div class="progress-bar"><div class="progress-bar__fill" id="progressFill"></div></div>
 
+<!-- ── 상단 전통 문양 띠 ──────────────────────────── -->
+<div class="top-band" aria-hidden="true"></div>
+
 <!-- ── Nav ─────────────────────────────────────────── -->
 <nav class="nav" id="nav">
   <a href="#hero" class="nav__logo">
     <img class="nav__crest" src="assets/hansung-mark.png" alt="한성대학교" />
-    <span>🔥</span><span>불사조 기록단</span>
+    <span class="nav__logo-char">凤</span><span>불사조 기록단</span>
   </a>
   <button class="nav__hamburger" id="hamburger" aria-label="메뉴">
     <span></span><span></span><span></span>
@@ -36,12 +42,13 @@
 
 <!-- ── Hero ────────────────────────────────────────── -->
 <section id="hero" class="hero">
+  <div class="hero__ideogram" aria-hidden="true">凤</div>
   <div class="hero__ring"></div>
   <div class="hero__ring"></div>
   <div class="hero__ring"></div>
   <div class="hero__dots"></div>
   <div class="hero__content">
-    <img class="hero__crest" src="assets/hansung-mark.png" alt="한성대학교 엠블럼" />
+    <img class="hero__crest" src="assets/hansung-logotype-cn.png" alt="漢城大學校" />
     <p class="hero__eyebrow">한성대학교 글로벌 리더십 탐방단 2026 · 4조</p>
 
     <div class="hero__rule"></div>
@@ -68,13 +75,13 @@
       <div class="hero__city hero__city--sz">
         <span class="hero__city-icon">⚡</span>
         <strong>선전</strong>
-        <small>첨단 기술 · 미래 도시</small>
+        <small>深圳 · 첨단 기술 · 미래 도시</small>
       </div>
       <div class="hero__city-divider">vs</div>
       <div class="hero__city hero__city--sh">
         <span class="hero__city-icon">🏯</span>
         <strong>상하이</strong>
-        <small>역사 문화 · 공간 재생</small>
+        <small>上海 · 역사 문화 · 공간 재생</small>
       </div>
     </div>
 
@@ -87,6 +94,9 @@
   </div>
 </section>
 
+<!-- ── Cloud divider ─────────────────────────────── -->
+<div class="cn-divider" aria-hidden="true"><span>❧ ❧ ❧</span></div>
+
 <!-- ── About ────────────────────────────────────────── -->
 <section id="about" class="section about">
   <div class="container">
@@ -97,23 +107,25 @@
     </p>
     <div class="about__cards">
       <div class="about__card">
-        <span class="about__card-num">01</span>
+        <span class="about__card-num">一</span>
         <h3>실증</h3>
         <p>전공 서적과 강의에서 이론으로만 학습해 온 지식들을 글로벌 현장 탐방이라는 실제적 경험을 통해 검증한다.</p>
       </div>
       <div class="about__card">
-        <span class="about__card-num">02</span>
+        <span class="about__card-num">二</span>
         <h3>융합</h3>
         <p>인문학적 스토리텔링과 경영 전략, 공간 설계 및 최첨단 공학 시스템을 아우르는 다각도의 시선을 하나로 모은다.</p>
       </div>
       <div class="about__card">
-        <span class="about__card-num">03</span>
+        <span class="about__card-num">三</span>
         <h3>기록</h3>
         <p>공간은 그곳에 머무는 사람들의 이야기와 시간이 쌓여서 만들어진다. 우리만의 특별한 시선이 담긴 기록물로 남긴다.</p>
       </div>
     </div>
   </div>
 </section>
+
+<div class="cn-divider" aria-hidden="true"><span>❧ ❧ ❧</span></div>
 
 <!-- ── Compare ──────────────────────────────────────── -->
 <section id="compare" class="section compare">
@@ -128,7 +140,7 @@
         <div class="compare__col-header">
           <span class="compare__icon">⚡</span>
           <div>
-            <h3>선전 Shenzhen</h3>
+            <h3>선전 深圳</h3>
             <p>기술이 공간을 재정의하다</p>
           </div>
         </div>
@@ -145,7 +157,7 @@
         <div class="compare__col-header">
           <span class="compare__icon">🏯</span>
           <div>
-            <h3>상하이 Shanghai</h3>
+            <h3>상하이 上海</h3>
             <p>역사가 공간을 이야기하다</p>
           </div>
         </div>
@@ -159,6 +171,8 @@
     </div>
   </div>
 </section>
+
+<div class="cn-divider" aria-hidden="true"><span>❧ ❧ ❧</span></div>
 
 <!-- ── Itinerary ─────────────────────────────────────── -->
 <section id="itinerary" class="section itinerary">
@@ -259,6 +273,8 @@
     </div>
   </div>
 </section>
+
+<div class="cn-divider" aria-hidden="true"><span>❧ ❧ ❧</span></div>
 
 <!-- ── Places ────────────────────────────────────────── -->
 <section id="places" class="section places">
@@ -502,6 +518,8 @@
   </div>
 </section>
 
+<div class="cn-divider" aria-hidden="true"><span>❧ ❧ ❧</span></div>
+
 <!-- ── Reels ─────────────────────────────────────────── -->
 <section id="reels" class="section reels">
   <div class="container">
@@ -569,6 +587,8 @@
     </div>
   </div>
 </section>
+
+<div class="cn-divider" aria-hidden="true"><span>❧ ❧ ❧</span></div>
 
 <!-- ── Team ──────────────────────────────────────────── -->
 <section id="team" class="section team">
@@ -652,18 +672,20 @@
 
 <!-- ── Footer ────────────────────────────────────────── -->
 <footer class="footer">
+  <div class="footer__ornament" aria-hidden="true">凤凰</div>
   <div class="container">
     <div class="footer__brand">
       <span class="footer__fire">🔥</span>
       <span class="footer__name">불사조 기록단</span>
     </div>
     <p class="footer__project">선전과 상하이의 공간 연출 및 사용자 경험 비교 분석</p>
-    <img class="footer__logo" src="assets/hansung-logotype-ko.png" alt="한성대학교" />
+    <img class="footer__logo" src="assets/hansung-logotype-cn.png" alt="漢城大學校" />
     <p class="footer__uni">한성대학교 글로벌 리더십 탐방단 2026 · 4조</p>
     <p class="footer__period">2026.07.06 – 07.10</p>
     <div class="footer__keywords">
       <span>#실증</span><span>#융합</span><span>#기록</span>
     </div>
+    <p class="footer__cn-edition">凤凰版 — 중국풍 에디션</p>
   </div>
 </footer>
 
