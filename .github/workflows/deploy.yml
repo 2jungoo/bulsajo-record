@@ -23,11 +23,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/configure-pages@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: react-app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: react-app
+
+      - name: Build
+        run: npm run build
+        working-directory: react-app
+
+      - name: Copy legacy page
+        run: |
+          mkdir -p react-app/out/old
+          cp index.html react-app/out/old/
+          cp style.css react-app/out/old/
+          cp script.js react-app/out/old/
+          cp -r assets react-app/out/old/
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: react-app/out
 
       - uses: actions/deploy-pages@v4
         id: deployment
