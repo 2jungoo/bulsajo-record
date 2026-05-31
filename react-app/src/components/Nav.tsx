@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
+// basePath 접두사 — unoptimized export에선 next/image가 src에 자동 적용 안 함
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 const links = [
   { href: '#about', label: '소개' },
   { href: '#compare', label: '비교' },
@@ -39,7 +42,7 @@ export default function Nav() {
 
       <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
         <a href="#hero" className="nav__logo" onClick={closeMenu}>
-          <Image src="/assets/hansung-mark.png" alt="한성대학교" width={60} height={24} className="nav__crest" style={{ width: 'auto', height: 24 }} />
+          <Image src={`${BP}/assets/hansung-mark.png`} alt="한성대학교" width={60} height={24} className="nav__crest" style={{ width: 'auto', height: 24 }} />
           <span>🔥</span>
           <span>불사조 기록단</span>
         </a>

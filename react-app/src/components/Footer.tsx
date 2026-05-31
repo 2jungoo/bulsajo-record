@@ -1,5 +1,8 @@
 import Image from 'next/image'
 
+// basePath 접두사 — unoptimized export에선 next/image가 src에 자동 적용 안 함
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 export default function Footer() {
   return (
     <footer className="footer section--dark">
@@ -9,7 +12,7 @@ export default function Footer() {
       </div>
       <p className="footer__project">선전과 상하이의 공간 연출 및 사용자 경험 비교 분석</p>
       <Image
-        src="/assets/hansung-logotype-ko.png"
+        src={`${BP}/assets/hansung-logotype-ko.png`}
         alt="한성대학교"
         width={89}
         height={26}

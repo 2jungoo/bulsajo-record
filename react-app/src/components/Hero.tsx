@@ -109,7 +109,7 @@ export default function Hero() {
             transition={{ duration: skip ? 0 : 0.65, delay: skip ? 0 : 0.85, ease: SPRING }}
           >
             <Image
-              src="/assets/hansung-mark.png"
+              src={`${BP}/assets/hansung-mark.png`}
               alt="한성대학교 엠블럼"
               width={130}
               height={52}
