@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+const basePath = '/bulsajo-record'
+
 const nextConfig = {
   output: 'export',
-  basePath: '/bulsajo-record',
+  basePath,
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
   images: { unoptimized: true },
 }
 

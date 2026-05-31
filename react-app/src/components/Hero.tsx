@@ -7,6 +7,9 @@ import { motion, useReducedMotion, AnimatePresence } from 'framer-motion'
 // 인트로 "팡" 이징 — 스프링처럼 강하게 열리는 커브
 const SPRING: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
+// basePath 접두사 — <video>/<source>/poster 같은 raw 태그엔 Next가 자동 적용 안 함
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 export default function Hero() {
   const prefersReduced = useReducedMotion()
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -70,7 +73,7 @@ export default function Hero() {
           loop
           playsInline
           preload="metadata"
-          poster="/video/hero-poster.jpg"
+          poster={`${BP}/video/hero-poster.jpg`}
           initial={{ opacity: 0, scale: skip ? 1 : 1.12 }}
           animate={videoReady
             ? { opacity: 1, scale: 1 }
@@ -78,8 +81,7 @@ export default function Hero() {
           }
           transition={{ duration: skip ? 0 : 1.1, ease: SPRING }}
         >
-          <source src="/video/hero.webm" type="video/webm" />
-          <source src="/video/hero.mp4" type="video/mp4" />
+          <source src={`${BP}/video/hero.mp4`} type="video/mp4" />
         </motion.video>
 
         {/* ── CSS 배경도 "팡" 열리는 효과 (영상 없을 때) ── */}
