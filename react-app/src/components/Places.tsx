@@ -3,14 +3,15 @@
 import { useState } from 'react'
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
 import Reveal from './Reveal'
-import { places, City } from '@/data/places'
+import { places, SpaceType } from '@/data/places'
 
-type Filter = 'all' | City
+type Filter = 'all' | SpaceType
 
 const filters: { value: Filter; label: string; count: number }[] = [
-  { value: 'all', label: '전체', count: 13 },
-  { value: 'shenzhen', label: '선전', count: 5 },
-  { value: 'shanghai', label: '상하이', count: 8 },
+  { value: 'all', label: '전체', count: places.length },
+  { value: 'regen', label: '역사재생', count: places.filter(p => p.spaceType === 'regen').length },
+  { value: 'commercial', label: '상업건축', count: places.filter(p => p.spaceType === 'commercial').length },
+  { value: 'smart', label: '스마트인프라', count: places.filter(p => p.spaceType === 'smart').length },
 ]
 
 export default function Places() {
@@ -18,16 +19,16 @@ export default function Places() {
 
   const filtered = activeFilter === 'all'
     ? places
-    : places.filter(p => p.city === activeFilter)
+    : places.filter(p => p.spaceType === activeFilter)
 
   return (
     <section id="places" className="section">
       <div className="container">
         <Reveal>
           <p className="section-label">공간 기록</p>
-          <h2 className="section-title">탐방 공간 로그</h2>
+          <h2 className="section-title">4일차 탐방 공간 로그</h2>
           <p className="places__sub">
-            방문한 모든 공간의 UX와 공간 연출을 기록합니다. 평점·사진은 탐방(7월) 후 업데이트됩니다.
+            자유 탐방에서 방문한 공간의 UX와 공간 연출을 기록합니다. 평점·사진은 탐방(7월) 후 업데이트됩니다.
           </p>
         </Reveal>
 
@@ -59,13 +60,8 @@ export default function Places() {
                   transition={{ duration: 0.3, delay: (i % 3) * 0.06 }}
                   whileHover={{ y: -6 }}
                 >
-                  <figure
-                    className={`place-card__photo place-card__photo--${place.city === 'shenzhen' ? 'sz' : 'sh'}`}
-                  >
+                  <figure className={`place-card__photo place-card__photo--${place.spaceType}`}>
                     {place.emoji}
-                    <span className={`place-tag place-tag--${place.city === 'shenzhen' ? 'sz' : 'sh'}`}>
-                      {place.cityLabel}
-                    </span>
                     <span className="cat-tag">{place.categoryLabel}</span>
                   </figure>
                   <div className="place-card__body">

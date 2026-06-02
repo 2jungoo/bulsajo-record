@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: '불사조 기록단 — 선전 & 상하이 탐방 기록',
-  description: '한성대학교 4조 불사조 기록단. 선전(기술)과 상하이(역사·문화)의 공간 연출 및 사용자 경험 비교 분석.',
+  title: '불사조 기록단 — 상하이 4일차 자유 탐방 기록',
+  description: '한성대학교 4조 불사조 기록단. 상하이 4일차 자유 탐방 — 역사적 공간 재생·복합 상업 건축·첨단 스마트 인프라의 공간 연출 및 사용자 경험 분석.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

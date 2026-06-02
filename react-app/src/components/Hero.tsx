@@ -139,8 +139,8 @@ export default function Hero() {
           />
 
           {/* 메인 타이틀 — 3줄 개별 stagger */}
-          <motion.h1 className="hero__title" aria-label="선전과 상하이의 공간 연출 및 사용자 경험 비교">
-            {['선전과 상하이의', '공간 연출 및', '사용자 경험 비교'].map((line, i) => (
+          <motion.h1 className="hero__title" aria-label="상하이 자유 탐방 — 공간 연출과 사용자 경험">
+            {['상하이 자유 탐방', '공간 연출과', '사용자 경험'].map((line, i) => (
               <motion.span
                 key={line}
                 variants={lineVariants}
@@ -170,7 +170,7 @@ export default function Hero() {
             animate="visible"
             transition={lineTransition(0.45)}
           >
-            첨단 기술과 문화 융합 기반 글로벌 공간 트렌드 분석
+            역사 재생 · 복합 상업 · 스마트 인프라가 공존하는 글로벌 공간 트렌드 분석
           </motion.p>
 
           {/* 키워드 */}
@@ -184,7 +184,7 @@ export default function Hero() {
             실증<span className="dot">·</span>융합<span className="dot">·</span>기록
           </motion.div>
 
-          {/* 도시 카드 */}
+          {/* 핵심 공간 유형 카드 */}
           <motion.div
             className="hero__cities"
             variants={lineVariants}
@@ -192,24 +192,20 @@ export default function Hero() {
             animate="visible"
             transition={lineTransition(0.68)}
           >
-            <motion.div
-              className="hero__city hero__city--sz"
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.2 }}
-            >
-              <span className="hero__city-icon">⚡</span>
-              <strong>선전</strong>
-              <small>첨단 기술 · 미래 도시</small>
+            <motion.div className="hero__city" whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
+              <span className="hero__city-icon">🎨</span>
+              <strong>역사 재생</strong>
+              <small>M50 예술단지</small>
             </motion.div>
-            <span className="hero__city-divider">vs</span>
-            <motion.div
-              className="hero__city hero__city--sh"
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.2 }}
-            >
-              <span className="hero__city-icon">🏯</span>
-              <strong>상하이</strong>
-              <small>역사 문화 · 공간 재생</small>
+            <motion.div className="hero__city" whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
+              <span className="hero__city-icon">🛍️</span>
+              <strong>복합 상업</strong>
+              <small>난징동루 · 텐즈팡</small>
+            </motion.div>
+            <motion.div className="hero__city" whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
+              <span className="hero__city-icon">🏙️</span>
+              <strong>스마트 인프라</strong>
+              <small>루자쭈이 금융지구</small>
             </motion.div>
           </motion.div>
 
@@ -221,7 +217,7 @@ export default function Hero() {
             animate="visible"
             transition={lineTransition(0.8)}
           >
-            📅 2026.07.06 – 07.10 · 4박 5일 · 🔥 불사조 기록단
+            📅 2026.07.09 · 상하이 4일차 자유 탐방 · 🔥 불사조 기록단
           </motion.p>
 
           {/* 스크롤 유도 */}

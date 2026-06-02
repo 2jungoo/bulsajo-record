@@ -10,7 +10,7 @@ export default function Footer() {
         <span className="footer__fire">🔥</span>
         <span className="footer__name">불사조 기록단</span>
       </div>
-      <p className="footer__project">선전과 상하이의 공간 연출 및 사용자 경험 비교 분석</p>
+      <p className="footer__project">상하이 4일차 자유 탐방 — 공간 연출 및 사용자 경험 분석</p>
       <Image
         src={`${BP}/assets/hansung-logotype-ko.png`}
         alt="한성대학교"

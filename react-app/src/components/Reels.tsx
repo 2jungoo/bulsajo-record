@@ -9,7 +9,7 @@ export default function Reels() {
           <p className="section-label">기록형 콘텐츠</p>
           <h2 className="section-title">숏폼 시리즈</h2>
           <p className="reels__sub">
-            불사조 기록단의 시선으로 담은 선전과 상하이. 릴스 시리즈는 탐방 후 업로드됩니다.
+            불사조 기록단의 시선으로 담은 상하이 4일차 자유 탐방. 릴스 시리즈는 탐방 후 업로드됩니다.
           </p>
         </Reveal>
 

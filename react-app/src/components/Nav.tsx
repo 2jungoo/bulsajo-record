@@ -8,7 +8,7 @@ const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 const links = [
   { href: '#about', label: '소개' },
-  { href: '#compare', label: '비교' },
+  { href: '#compare', label: '핵심 공간' },
   { href: '#itinerary', label: '일정' },
   { href: '#places', label: '공간 기록' },
   { href: '#reels', label: '콘텐츠' },

@@ -1,26 +1,31 @@
-export interface CompareItem {
+export interface SpaceTypeItem {
   icon: string
   title: string
   sub: string
   desc: string
+  points: string[]
 }
 
-export interface CompareData {
-  shenzhen: CompareItem[]
-  shanghai: CompareItem[]
-}
-
-export const compareData: CompareData = {
-  shenzhen: [
-    { icon: '🤖', title: '자율주행 · AI', sub: '바이두 Apollo Go', desc: '운전자 없는 로보택시가 일상화' },
-    { icon: '🚁', title: '드론 배달', sub: '메이탄 드론 배달 15분', desc: '하늘길이 물류 인프라' },
-    { icon: '🏢', title: '테크 플래그십', sub: 'DJI · BYD', desc: '기업이 브랜드 공간으로 사용자를 설계' },
-    { icon: '🔬', title: '하드웨어 생태계', sub: '대공방', desc: '아이디어가 제품이 되는 창업 공간' },
-  ],
-  shanghai: [
-    { icon: '🏛️', title: '역사 재생', sub: '임시정부 청사 · 홍구공원', desc: '서사가 담긴 공간의 힘' },
-    { icon: '🌿', title: '전통 정원', sub: '예원', desc: '명나라 정원이 현대 관광과 공존' },
-    { icon: '🏙️', title: '문화 재생지구', sub: '신천지', desc: '스쿠먼 건축을 트렌디한 상업 공간으로' },
-    { icon: '🌉', title: '야경 경관', sub: '외탄 · 동방명주', desc: '도시 스카이라인이 만드는 공간 서사' },
-  ],
-}
+export const spaceTypes: SpaceTypeItem[] = [
+  {
+    icon: '🎨',
+    title: '역사적 공간 재생',
+    sub: 'M50 예술단지',
+    desc: '폐산업 시설을 예술·창의 공간으로 되살린 재생 모델. 사라질 뻔한 공간에 새 가치를 입힌다.',
+    points: ['방직공장 → 예술단지', '산업 유산 골조 보존', '갤러리·아틀리에 입주'],
+  },
+  {
+    icon: '🛍️',
+    title: '현대 복합 상업 건축',
+    sub: '난징동루 · 텐즈팡',
+    desc: '전통과 로컬 트렌드가 공존하는 복합 상업 공간. 거리·골목 자체가 하나의 브랜드 경험이 된다.',
+    points: ['보행자 중심 번화가', '스쿠먼 골목 재생', '쇼핑·미식·문화 융합'],
+  },
+  {
+    icon: '🏙️',
+    title: '첨단 스마트 인프라',
+    sub: '루자쭈이 금융지구',
+    desc: '초고층 마천루와 스마트 시스템이 결합한 미래 도시 인프라. 도시 스케일의 사용자 경험을 설계한다.',
+    points: ['수직 도시 마천루', '스마트 환승·보행 인프라', '동방명주 · 외탄 야경'],
+  },
+]

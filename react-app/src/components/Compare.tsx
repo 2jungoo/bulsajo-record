@@ -1,59 +1,33 @@
 import Reveal from './Reveal'
-import { compareData } from '@/data/compare'
+import { spaceTypes } from '@/data/compare'
 
 export default function Compare() {
   return (
     <section id="compare" className="section">
       <div className="container">
         <Reveal>
-          <p className="section-label">비교 분석</p>
-          <h2 className="section-title">두 도시, 두 공간의 언어</h2>
-          <p className="compare__lead">선전은 기술로 공간을 설계하고, 상하이는 역사로 공간에 이야기를 입힌다.</p>
+          <p className="section-label">핵심 공간</p>
+          <h2 className="section-title">세 개의 공간, 하나의 상하이</h2>
+          <p className="compare__lead">역사를 되살린 공간, 전통과 트렌드가 섞인 상업 공간, 미래를 설계하는 스마트 인프라 — 상하이를 읽는 세 가지 시선.</p>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="compare__split">
-            {/* 선전 */}
-            <div className="compare__col compare__col--sz">
-              <div className="compare__col-header">
-                <span className="compare__icon">⚡</span>
-                <h3>선전 Shenzhen</h3>
-                <p>기술이 공간을 재정의하다</p>
+          <div className="spaces__grid">
+            {spaceTypes.map((s, i) => (
+              <div key={i} className={`space-card space-card--${i + 1}`}>
+                <div className="space-card__header">
+                  <span className="space-card__icon">{s.icon}</span>
+                  <h3>{s.title}</h3>
+                  <p className="space-card__sub">{s.sub}</p>
+                </div>
+                <p className="space-card__desc">{s.desc}</p>
+                <ul className="space-card__points">
+                  {s.points.map((p, j) => (
+                    <li key={j}>{p}</li>
+                  ))}
+                </ul>
               </div>
-              <ul className="compare__list">
-                {compareData.shenzhen.map((item, i) => (
-                  <li key={i}>
-                    <span className="compare__list-icon">{item.icon}</span>
-                    <div className="compare__list-text">
-                      <strong>{item.title}</strong>
-                      <div className="compare__list-sub">{item.sub}</div>
-                      <div className="compare__list-desc">{item.desc}</div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* 상하이 */}
-            <div className="compare__col compare__col--sh">
-              <div className="compare__col-header">
-                <span className="compare__icon">🏯</span>
-                <h3>상하이 Shanghai</h3>
-                <p>역사가 공간을 이야기하다</p>
-              </div>
-              <ul className="compare__list">
-                {compareData.shanghai.map((item, i) => (
-                  <li key={i}>
-                    <span className="compare__list-icon">{item.icon}</span>
-                    <div className="compare__list-text">
-                      <strong>{item.title}</strong>
-                      <div className="compare__list-sub">{item.sub}</div>
-                      <div className="compare__list-desc">{item.desc}</div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
         </Reveal>
       </div>

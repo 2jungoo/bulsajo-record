@@ -12,7 +12,7 @@
   --text-light: #86868b;
   --border: #d2d2d7;
 
-  /* 선전 — 기술 파랑 */
+  /* 액센트 — 스마트 인프라 파랑 */
   --sz: #0071e3;
   --sz-bg: #f0f6ff;
   --sz-light: #c7def9;
@@ -109,9 +109,7 @@ body::before {
   padding: 3px 10px;
   border-radius: 100px;
 }
-.badge--sz { background: var(--sz-bg); color: var(--sz); }
 .badge--sh { background: var(--sh-bg); color: var(--sh); }
-.badge--tr { background: var(--bg-alt); color: var(--text-mid); }
 
 /* ── Nav ───────────────────────────────────────────────── */
 .nav {
@@ -344,12 +342,9 @@ body::before {
   box-shadow: 0 8px 32px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.15);
   transform: translateY(-4px);
 }
-.hero__city--sz { border-color: rgba(0,113,227,.4); }
-.hero__city--sh { border-color: rgba(192,73,44,.4); }
 .hero__city-icon { font-size: 26px; }
 .hero__city strong { font-size: 19px; font-weight: 700; color: #fff; }
 .hero__city small { font-size: 11px; color: rgba(255,255,255,.5); }
-.hero__city-divider { font-size: 16px; font-weight: 700; color: rgba(255,255,255,.3); }
 .hero__meta { font-size: 12px; color: rgba(255,255,255,.35); letter-spacing: 0.02em; }
 .hero__scroll {
   display: flex;
@@ -412,30 +407,41 @@ body::before {
   color: var(--text-mid);
   margin-bottom: 48px;
 }
-.compare__split {
+.spaces__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.space-card {
+  padding: 40px 32px;
   border-radius: 24px;
-  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--border);
   box-shadow: var(--shadow-md);
+  transition: box-shadow 0.25s, transform 0.25s;
 }
-.compare__col { padding: 52px 48px; }
-.compare__col--sz { background: var(--sz-bg); }
-.compare__col--sh { background: var(--sh-bg); border-left: 1px solid var(--border); }
-.compare__col-header { margin-bottom: 32px; }
-.compare__icon { font-size: 32px; display: block; margin-bottom: 12px; }
-.compare__col-header h3 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
-.compare__col-header p { font-size: 14px; color: var(--text-mid); }
-.compare__list { display: flex; flex-direction: column; gap: 20px; }
-.compare__list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
+.space-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-5px); }
+.space-card--1 { background: var(--sh-bg); }
+.space-card--2 { background: var(--bg-alt); }
+.space-card--3 { background: var(--sz-bg); }
+.space-card__header { margin-bottom: 20px; }
+.space-card__icon { font-size: 34px; display: block; margin-bottom: 12px; }
+.space-card__header h3 { font-size: 21px; font-weight: 700; margin-bottom: 4px; }
+.space-card__sub { font-size: 13px; font-weight: 600; color: var(--text-mid); }
+.space-card__desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 20px; }
+.space-card__points { display: flex; flex-direction: column; gap: 8px; }
+.space-card__points li {
+  font-size: 13px;
+  color: var(--text-mid);
+  padding-left: 16px;
+  position: relative;
 }
-.compare__list-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
-.compare__list-text strong { display: block; font-size: 15px; font-weight: 600; margin-bottom: 2px; }
-.compare__list-sub { font-size: 12px; font-weight: 600; color: var(--text-mid); margin-bottom: 2px; }
-.compare__list-desc { font-size: 13px; color: var(--text-mid); }
+.space-card__points li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  font-weight: 700;
+}
 
 /* ── Timeline ──────────────────────────────────────────── */
 .itinerary__sub { font-size: 15px; color: var(--text-mid); margin-bottom: 56px; }
@@ -453,6 +459,8 @@ body::before {
 .timeline__day { font-size: 26px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
 .timeline__date { font-size: 12px; color: var(--text-light); margin-bottom: 8px; }
 .timeline__content h3 { font-size: 17px; font-weight: 600; margin-bottom: 16px; }
+.timeline--day .timeline__content h3 { margin-bottom: 8px; }
+.timeline--day .timeline__content p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
 .timeline__content ul { display: flex; flex-direction: column; gap: 8px; }
 .timeline__content li { display: flex; gap: 16px; font-size: 14px; }
 .timeline__content time {
@@ -519,20 +527,9 @@ body::before {
   justify-content: center;
   font-size: 48px;
 }
-.place-card__photo--sz { background: linear-gradient(135deg, var(--sz-bg) 0%, var(--sz-light) 100%); }
-.place-card__photo--sh { background: linear-gradient(135deg, var(--sh-bg) 0%, var(--sh-light) 100%); }
-.place-tag {
-  position: absolute;
-  top: 12px; left: 12px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 100px;
-}
-.place-tag--sz { background: var(--sz); color: #fff; }
-.place-tag--sh { background: var(--sh); color: #fff; }
+.place-card__photo--regen { background: linear-gradient(135deg, var(--sh-bg) 0%, var(--sh-light) 100%); }
+.place-card__photo--commercial { background: linear-gradient(135deg, #fff6e8 0%, #f5dcae 100%); }
+.place-card__photo--smart { background: linear-gradient(135deg, var(--sz-bg) 0%, var(--sz-light) 100%); }
 .cat-tag {
   position: absolute;
   top: 12px; right: 12px;
@@ -677,9 +674,7 @@ body::before {
 
 /* ── Responsive ────────────────────────────────────────── */
 @media (max-width: 900px) {
-  .compare__split { grid-template-columns: 1fr; }
-  .compare__col--sz { border-radius: 24px 24px 0 0; }
-  .compare__col--sh { border-radius: 0 0 24px 24px; border-left: none; border-top: 1px solid var(--border); }
+  .spaces__grid { grid-template-columns: 1fr; }
   .about__cards { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
@@ -710,11 +705,10 @@ body::before {
   .timeline__day { font-size: 20px; }
   .places__grid { grid-template-columns: 1fr; }
   .team__grid { grid-template-columns: 1fr; }
-  .compare__col { padding: 36px 24px; }
+  .space-card { padding: 32px 24px; }
 }
 
 @media (max-width: 480px) {
   .hero__cities { flex-direction: column; }
-  .hero__city-divider { transform: rotate(90deg); }
   .reels__grid { grid-template-columns: 1fr 1fr; }
 }
