@@ -530,6 +530,13 @@ body::before {
 .place-card__photo--regen { background: linear-gradient(135deg, var(--sh-bg) 0%, var(--sh-light) 100%); }
 .place-card__photo--commercial { background: linear-gradient(135deg, #fff6e8 0%, #f5dcae 100%); }
 .place-card__photo--smart { background: linear-gradient(135deg, var(--sz-bg) 0%, var(--sz-light) 100%); }
+.place-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .cat-tag {
   position: absolute;
   top: 12px; right: 12px;
@@ -638,6 +645,12 @@ body::before {
   font-size: 24px;
   flex-shrink: 0;
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.member-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .member-card__info { flex: 1; }
 .member-name-row { display: flex; align-items: center; gap: 8px; margin-bottom: 2px; }
@@ -711,4 +724,74 @@ body::before {
 @media (max-width: 480px) {
   .hero__cities { flex-direction: column; }
   .reels__grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Nav 드론 링크 강조 ─────────────────────────────────── */
+.nav__drone-link {
+  color: var(--sz) !important;
+  font-weight: 600;
+}
+
+/* ── 드론 배달 별도 페이지 ─────────────────────────────── */
+.drone-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 96px 32px 80px;
+}
+.drone-page__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.drone-page__back {
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-mid);
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: color .2s, border-color .2s;
+}
+.drone-page__back:hover { color: var(--text); border-color: var(--text-light); }
+.drone-page__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+.drone-page__title {
+  font-size: clamp(26px, 3.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+.drone-page__desc {
+  max-width: 720px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-mid);
+  margin-bottom: 32px;
+}
+.drone-page__frame {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-alt);
+}
+.drone-page__frame iframe {
+  display: block;
+  width: 100%;
+  height: min(78vh, 820px);
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .drone-page { padding: 80px 20px 60px; }
+  .drone-page__frame iframe { height: min(70vh, 640px); }
 }

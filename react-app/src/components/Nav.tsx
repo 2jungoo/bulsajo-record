@@ -7,12 +7,12 @@ import Image from 'next/image'
 const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 const links = [
+  { href: '#team', label: '팀' },
   { href: '#about', label: '소개' },
   { href: '#compare', label: '핵심 공간' },
   { href: '#itinerary', label: '일정' },
   { href: '#places', label: '공간 기록' },
   { href: '#reels', label: '콘텐츠' },
-  { href: '#team', label: '팀' },
 ]
 
 export default function Nav() {
@@ -64,6 +64,9 @@ export default function Nav() {
               <a href={l.href} onClick={closeMenu}>{l.label}</a>
             </li>
           ))}
+          <li>
+            <a href={`${BP}/drone`} className="nav__drone-link" onClick={closeMenu}>드론 배달</a>
+          </li>
         </ul>
       </nav>
     </>

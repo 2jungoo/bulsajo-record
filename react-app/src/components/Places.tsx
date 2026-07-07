@@ -5,6 +5,9 @@ import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
 import Reveal from './Reveal'
 import { places, SpaceType } from '@/data/places'
 
+// basePath 접두사 — unoptimized export에선 <img> src에 자동 적용 안 함
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 type Filter = 'all' | SpaceType
 
 const filters: { value: Filter; label: string; count: number }[] = [
@@ -61,7 +64,17 @@ export default function Places() {
                   whileHover={{ y: -6 }}
                 >
                   <figure className={`place-card__photo place-card__photo--${place.spaceType}`}>
-                    {place.emoji}
+                    {place.photo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={`${BP}/assets/places/${place.photo}`}
+                        alt={place.title}
+                        className="place-card__img"
+                        loading="lazy"
+                      />
+                    ) : (
+                      place.emoji
+                    )}
                     <span className="cat-tag">{place.categoryLabel}</span>
                   </figure>
                   <div className="place-card__body">

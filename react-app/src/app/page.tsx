@@ -14,12 +14,12 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <Team />
         <About />
         <Compare />
         <Timeline />
         <Places />
         <Reels />
-        <Team />
       </main>
       <Footer />
     </>
