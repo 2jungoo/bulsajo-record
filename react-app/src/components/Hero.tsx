@@ -200,12 +200,12 @@ export default function Hero() {
             <motion.div className="hero__city" whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
               <span className="hero__city-icon">🛍️</span>
               <strong>복합 상업</strong>
-              <small>난징동루 · 텐즈팡</small>
+              <small>난징동루 · 티엔즈팡</small>
             </motion.div>
             <motion.div className="hero__city" whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
-              <span className="hero__city-icon">🏙️</span>
+              <span className="hero__city-icon">🌉</span>
               <strong>스마트 인프라</strong>
-              <small>루자쭈이 금융지구</small>
+              <small>와이탄 · 푸동 조망</small>
             </motion.div>
           </motion.div>
 
