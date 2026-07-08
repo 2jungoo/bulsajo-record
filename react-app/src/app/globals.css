@@ -575,7 +575,23 @@ body::before {
 .ux-point p { font-size: 12px; color: var(--text-mid); line-height: 1.6; }
 
 /* ── Reels ─────────────────────────────────────────────── */
-.reels__sub { font-size: 14px; color: var(--text-mid); margin-bottom: 40px; }
+.reels__sub { font-size: 14px; color: var(--text-mid); margin-bottom: 20px; }
+.reels__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  padding: 10px 18px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+.reels__cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); opacity: 0.95; }
+.reels__cta strong { font-weight: 700; }
 .reels__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
