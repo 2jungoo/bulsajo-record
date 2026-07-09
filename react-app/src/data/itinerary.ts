@@ -33,11 +33,6 @@ export const itinerary: TimelineScheduleItem[] = [
     desc: '카페·구경 — 스쿠먼 역사 건축과 현대 리테일이 결합한 공간 연출 관찰.',
   },
   {
-    time: '15:50',
-    title: '와이탄 / 외탄 (外灘)',
-    desc: '쇼핑 — 황포강 변 워터프론트에서 강 건너 푸동 스카이라인·야경 조망.',
-  },
-  {
     time: '16:50',
     title: '일정 마무리',
     desc: '백화점 인근 도착 — 조별 탐방 기록 정리.',

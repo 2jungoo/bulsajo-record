@@ -79,10 +79,6 @@ export default function Places() {
                   </figure>
                   <div className="place-card__body">
                     <h3>{place.title}</h3>
-                    <div className="rating">
-                      <span className="stars">☆☆☆☆☆</span>
-                      <span className="rating-note">탐방 후 입력</span>
-                    </div>
                     <p>{place.desc}</p>
                     <div className="ux-point">
                       <div className="ux-label">UX 관전 포인트</div>

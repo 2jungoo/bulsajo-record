@@ -1,5 +1,39 @@
 import Reveal from './Reveal'
-import { reels } from '@/data/reels'
+import { reels, feeds, type Reel } from '@/data/reels'
+
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
+function ReelCard({ item }: { item: Reel }) {
+  return (
+    <div className="reel-card">
+      <div className="reel-card__screen">
+        {item.photo ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={`${BP}/assets/reels/${item.photo}`}
+            alt={item.title}
+            className="reel-card__img"
+            loading="lazy"
+          />
+        ) : (
+          <>
+            {item.emoji}
+            <span>{item.title}</span>
+          </>
+        )}
+      </div>
+      <div className="reel-card__info">
+        <h3>{item.title}</h3>
+        <p>{item.desc}</p>
+        <div className="reel-tags">
+          {item.tags.map(tag => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function Reels() {
   return (
@@ -9,7 +43,7 @@ export default function Reels() {
           <p className="section-label">기록형 콘텐츠</p>
           <h2 className="section-title">숏폼 시리즈</h2>
           <p className="reels__sub">
-            불사조 기록단의 시선으로 담은 상하이 4일차 자유 탐방. 릴스 시리즈는 탐방 후 업로드됩니다.
+            불사조 기록단이 심천·상하이에서 담은 릴스와 감성 피드. 인스타그램 @project.revelio에서 전체 콘텐츠를 만나보세요.
           </p>
           <a
             className="reels__cta"
@@ -26,24 +60,24 @@ export default function Reels() {
           </a>
         </Reveal>
 
+        <Reveal>
+          <h3 className="reels__group-title">릴스</h3>
+        </Reveal>
         <div className="reels__grid">
           {reels.map((reel, i) => (
             <Reveal key={reel.id} delay={i * 0.1}>
-              <div className="reel-card">
-                <div className="reel-card__screen">
-                  🎬
-                  <span>Coming<br />July 2026</span>
-                </div>
-                <div className="reel-card__info">
-                  <h3>{reel.title}</h3>
-                  <p>{reel.desc}</p>
-                  <div className="reel-tags">
-                    {reel.tags.map(tag => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <ReelCard item={reel} />
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal className="reels__group--spaced">
+          <h3 className="reels__group-title">심천·상하이 피드</h3>
+        </Reveal>
+        <div className="reels__grid">
+          {feeds.map((feed, i) => (
+            <Reveal key={feed.id} delay={i * 0.1}>
+              <ReelCard item={feed} />
             </Reveal>
           ))}
         </div>
