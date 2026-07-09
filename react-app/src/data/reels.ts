@@ -44,6 +44,7 @@ export const feeds: Reel[] = [
     title: '심천 — 활동 기록',
     desc: '심천에서의 팀 활동을 담은 감성 피드. 도시의 결과 우리의 하루를 사진으로 남겼다.',
     tags: ['#심천', '#감성피드', '#팀활동'],
+    photo: 'shenzhen.jpg',
   },
   {
     id: 2,
@@ -51,5 +52,6 @@ export const feeds: Reel[] = [
     title: '상하이 — 활동 기록',
     desc: '상하이에서의 팀 활동을 담은 감성 피드. 공간과 순간을 사진으로 기록했다.',
     tags: ['#상하이', '#감성피드', '#팀활동'],
+    photo: 'shanghai.jpg',
   },
 ]
