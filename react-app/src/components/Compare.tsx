@@ -8,7 +8,7 @@ export default function Compare() {
         <Reveal>
           <p className="section-label">핵심 공간</p>
           <h2 className="section-title">세 개의 공간, 하나의 상하이</h2>
-          <p className="compare__lead">역사를 되살린 공간, 전통과 트렌드가 섞인 상업 공간, 미래를 설계하는 스마트 인프라 — 상하이를 읽는 세 가지 시선.</p>
+          <p className="compare__lead">역사를 되살린 공간, 전통과 트렌드가 섞인 상업 공간, 전통과 모더니즘이 공존하는 재생 공간 — 상하이를 읽는 세 가지 시선.</p>
         </Reveal>
 
         <Reveal delay={0.15}>

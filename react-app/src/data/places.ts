@@ -41,11 +41,4 @@ export const places: Place[] = [
     uxPoint: '역사 건축의 파사드를 유지하며 현대 리테일을 이식한 재생 모델. 옛 골목 스케일과 고급 브랜드 동선이 겹쳐지는 경험 분석.',
     photo: 'xintiandi.jpg',
   },
-  {
-    id: 5, spaceType: 'smart', emoji: '🌉', categoryLabel: '스마트인프라',
-    title: '와이탄 / 외탄 (外灘)',
-    desc: '황포강 서안 워터프론트 산책로. 강 건너 푸동의 마천루 스카이라인을 정면으로 조망하는 상하이 최고의 경관 포인트.',
-    uxPoint: '야경 조명 연출과 관람객의 감성 경험. 강을 사이에 둔 역사 건축(서안)과 스마트 금융도시(동안)의 대비 서사.',
-    photo: 'waitan.jpg',
-  },
 ]

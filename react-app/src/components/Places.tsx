@@ -14,7 +14,6 @@ const filters: { value: Filter; label: string; count: number }[] = [
   { value: 'all', label: '전체', count: places.length },
   { value: 'regen', label: '역사재생', count: places.filter(p => p.spaceType === 'regen').length },
   { value: 'commercial', label: '상업건축', count: places.filter(p => p.spaceType === 'commercial').length },
-  { value: 'smart', label: '스마트인프라', count: places.filter(p => p.spaceType === 'smart').length },
 ]
 
 export default function Places() {
